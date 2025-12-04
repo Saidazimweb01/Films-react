@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import "./App.css"
-import Header from "../header/header"
-import Movieslist from "../movieslist/movieslist"
-import Info from "../info/info"
+import Header from "../Header/Header"
+import Movieslist from "../Movieslist/Movieslist"
+import Info from "../Info/Info"
 
 
 let KEY = "e4b5a9c9"
