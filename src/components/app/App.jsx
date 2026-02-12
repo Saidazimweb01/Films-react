@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./app.css"
+import "./App.css"
 import Header from "../header/header"
 import Movieslist from "../movieslist/movieslist"
 import Info from "../info/info"
