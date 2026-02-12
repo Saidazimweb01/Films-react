@@ -2,7 +2,7 @@ import "./Header.css"
 import popcornLogo from "../../assets/popcorn.png"
 
 
-export default function header({ setSearch, searches, films }) {
+export default function Header({ setSearch, searches, films }) {
     return (
         <>
             <header className="head">
