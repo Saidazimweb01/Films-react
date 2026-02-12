@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Movie from "../movie/Movie"
+import Movie from "../movie/movie"
 import "./movieslist.css"
 
 
