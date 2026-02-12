@@ -41,3 +41,24 @@
         font-family: monospace;
     }
 }
+
+
+@media(max-width:694px){
+    .head-founded__text{
+        display: none;
+    }
+}
+
+@media(max-width:400px){
+    .head__box{
+        flex-direction: column;
+        padding: 10px 0;
+
+      
+    }
+
+    .head-search__input{
+        width: 100%;
+        text-align: center;
+    }
+}
