@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./Info.css"
+import "./info.css"
 
 let KEY = "e4b5a9c9"
 
