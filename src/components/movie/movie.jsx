@@ -1,4 +1,4 @@
-import "./Movie.css"
+import "./movie.css"
 
 export default function Movie({ films, setSelectedFilm, selectedFilm }) {
 

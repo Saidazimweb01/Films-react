@@ -62,6 +62,8 @@ export default function Info({ selectedFilm, setSelectedFilm, setWatched, watche
         return total + +el.Runtime.split(" ")[0] / watched.length
     }, 0)
 
+    // let watchedFilm = watched.find((el)=> el.imdbID == watched.imdbID)
+
     return (
         <>
             <div className="hero-info">
@@ -95,30 +97,32 @@ export default function Info({ selectedFilm, setSelectedFilm, setWatched, watche
                                 <ul className="hero-info-favourite__cards">
                                     {
                                         !watched.length ? <>
-                                        <p className="hero-info-favourite__status">
-                                            You don't have watched movies yet
-                                        </p>
+                                            <p className="hero-info-favourite__status">
+                                                You don't have watched movies yet
+                                            </p>
                                         </> :
                                             watched.map((el) => (
-                                                <li key={el.imdbID} onClick={() => setSelectedFilm(el.imdbID)} className="hero-info-fvourite__item">
-                                                    <div className="hero-info-favourite-box" >
-                                                        <img
-                                                            width={100} height={150}
-                                                            src={el.Poster} alt="" />
-                                                        <div className="hero-info-favourite__infos">
-                                                            <div className="hero-info-favourite__inner-title">
-                                                                <h3>{el.Title}</h3>
-                                                            </div>
-                                                            <div className="hero-info-favourite__inner-text">
-                                                                <p className="hero-info-favourite__star">⭐ {el.imdbRating}</p>
-                                                                <p className="hero-info-favourite__swet">🌟 8</p>
-                                                                <p className="hero-info-favourite__time">⌛ {el.Runtime}</p>
+                                                <li key={el.imdbID} onClick={() => setSelectedFilm(el.imdbID)} className="hero-info-favourite__item">
+                                                    <div className="hero__inner">
+                                                        <div className="hero-info-favourite-box" >
+                                                            <img
+                                                                width={100} height={150}
+                                                                src={el.Poster} alt="" />
+                                                            <div className="hero-info-favourite__infos">
+                                                                <div className="hero-info-favourite__inner-title">
+                                                                    <h3>{el.Title}</h3>
+                                                                </div>
+                                                                <div className="hero-info-favourite__inner-text">
+                                                                    <p className="hero-info-favourite__star">⭐ {el.imdbRating}</p>
+                                                                    <p className="hero-info-favourite__swet">🌟 8</p>
+                                                                    <p className="hero-info-favourite__time">⌛ {el.Runtime}</p>
 
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="hero-info-favourite__cancel" onClick={(e) => e.stopPropagation()}>
-                                                        <button className="hero-info-favourite__cancel-btn" onClick={() => deleteFilm(el.imdbID)}>X</button>
+                                                        <div className="hero-info-favourite__cancel" onClick={(e) => e.stopPropagation()}>
+                                                            <button className="hero-info-favourite__cancel-btn" onClick={() => deleteFilm(el.imdbID)}>X</button>
+                                                        </div>
                                                     </div>
                                                 </li>
                                             ))
@@ -148,9 +152,13 @@ export default function Info({ selectedFilm, setSelectedFilm, setWatched, watche
                                             {
                                                 isWatched ? (
                                                     <>
-                                                        <p>
-                                                            This film has already in watched movies
-                                                        </p>
+                                                        <div>
+                                                            <p>
+                                                                This film has already in watched movies
+                                                            </p>
+                                                            <button className="hero-info-favourite__btn" onClick={() => deleteFilm(movie.imdbID)}>Delete this film ?</button>
+                                                        </div>
+
 
                                                     </>
                                                 )
